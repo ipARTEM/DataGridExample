@@ -1,0 +1,44 @@
+﻿<Window x:Class="DataGridExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataGridExample"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid>
+        <StackPanel>
+            <DataGrid x:Name="DG" Height="300" Margin="10">
+               <!--
+                <DataGrid.Resources>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        
+                        
+                        <Setter Property="Background" Value="Azure"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                        <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        
+                    </Style>
+                </DataGrid.Resources>
+                -->
+                
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Employee ID" Binding="{Binding employeeID}"/>
+                    <DataGridTextColumn Header="Employee Name" Binding="{Binding employeeName}"/>
+                    <DataGridTextColumn Header="Employee Adress" Binding="{Binding employeeAddress}"/>
+                    <DataGridTextColumn Header="Employee City" Binding="{Binding employeeCity}"/>
+                    <DataGridTextColumn Header="Employee State" Binding="{Binding employeeState}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <TextBox x:Name="TBID" Width="300"/>
+            <TextBox x:Name="TBName" Width="300"/>
+            <TextBox x:Name="TBAdress" Width="300"/>
+            <TextBox x:Name="TBCity" Width="300"/>
+            <TextBox x:Name="TBState" Width="300"/>
+
+
+            <Button x:Name="Add" Content="Добавить" Width="200" Click="Add_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
